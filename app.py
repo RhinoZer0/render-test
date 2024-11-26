@@ -1,7 +1,8 @@
+import time
 import pandas as pd
 import scipy.stats
 import streamlit as st
-import time
+
 
 # estas son variables de estado que se conservan cuando Streamlin vuelve a ejecutar este script
 if 'experiment_no' not in st.session_state:
@@ -18,7 +19,7 @@ def toss_coin(n):
 
     trial_outcomes = scipy.stats.bernoulli.rvs(p=0.5, size=n)
 
-    mean = None
+    #mean = 0
     outcome_no = 0
     outcome_1_count = 0
 
@@ -50,3 +51,4 @@ if start_button:
     st.session_state['df_experiment_results'] = st.session_state['df_experiment_results'].reset_index(drop=True)
 
 st.write(st.session_state['df_experiment_results'])
+# End-of-file (EOF)
